@@ -226,7 +226,7 @@ impl<'ctx> FunctionValue<'ctx> {
         unsafe { LLVMSetPersonalityFn(self.as_value_ref(), personality_fn.as_value_ref()) }
     }
 
-    #[llvm_versions(3.7..=latest)]
+    #[llvm_versions(4.0..=latest)]
     pub fn remove_personality_function(self) {
         unsafe {
             LLVMSetPersonalityFn(self.as_value_ref(), std::ptr::null_mut())

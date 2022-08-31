@@ -80,7 +80,7 @@ impl<'ctx> StructValue<'ctx> {
         if operand.is_null() {
             return None;
         }
-        Some(AnyValueEnum::new(operand))
+        Some(unsafe { AnyValueEnum::new(operand) })
     }
 
 }
